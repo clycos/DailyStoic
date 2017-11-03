@@ -62,7 +62,7 @@ var json_file = "data/daily_stoic.json";
 xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
-        myFunction(myArr);
+        webOutput(myArr);
     }
 };
 
@@ -72,7 +72,7 @@ xmlhttp.send();
 //------------------------------------------------------------------------------
 
 //loop through myArr and display results to page
-function myFunction(arr) {
+function webOutput(arr) {
     currentDay();
     var out = "<hr />"; //begin output with an HR tag
     for (var i = 0; i < arr.length; i++) {
