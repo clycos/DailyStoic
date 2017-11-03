@@ -1,9 +1,9 @@
-/* used https://www.w3schools.com/js/tryit.asp?filename=tryjson_http
- * as example
- * https://www.w3schools.com/js/tryit.asp?filename=tryjson_parse_date
+/* website used as examples for this app
+ https://www.w3schools.com/js/tryit.asp?filename=tryjson_http
+ https://www.w3schools.com/js/tryit.asp?filename=tryjson_parse_date
  https://api.jquery.com/jquery.when/
  https://stackoverflow.com/questions/24909006/javascript-get-data-from-json-to-a-global-variable
-https://stackoverflow.com/questions/38963412/getting-next-and-previous-element-of-json-array
+ https://stackoverflow.com/questions/38963412/getting-next-and-previous-element-of-json-array
  */
 
 //------------------------------------------------------------------------------
