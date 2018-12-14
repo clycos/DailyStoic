@@ -1,3 +1,0 @@
-,
-  {"date":"November 1","topic":"","quotes":[{"quote":"","author":"","source":""}],"notes":"<p></p>","thoughts":""}
- 

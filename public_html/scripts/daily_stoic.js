@@ -23,7 +23,9 @@ function readFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
     rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
+    rawFile.onload = function() {
+           console.log("Ready State: " + rawFile.readyState);
+           console.log("Ready Status: " + rawFile.status);
         if (rawFile.readyState === 4 && rawFile.status === 200) {
             callback(rawFile.responseText);
         }
@@ -33,7 +35,9 @@ function readFile(file, callback) {
 
 function dayToProcess(daysToAdd) {
     currentDate.setDate(currentDate.getDate() + daysToAdd);
+    console.log('Current Date: ' + currentDate);
     dateToProcess = monthNames[currentDate.getMonth()] + ' ' + currentDate.getDate();
+    console.log('Date To Process: ' + dateToProcess);
 }
 
 function getAge(dateString) 
@@ -58,18 +62,18 @@ function stoicOutput(inputArray, d) {
         if (inputArray[i].date === dateToProcess) // only populate today's quote
         {
             out += '<h2>' + inputArray[i].date + '</h2>'; //Date Line
-            out += '<h3>' + inputArray[i].topic + '</h3>'; //Topic Line
+            out += '<h3 class="text-primary text-uppercase">' + inputArray[i].topic + '</h3>'; //Topic Line
             out += '<div id = "quotes">';
             for (var j = 0; j < inputArray[i].quotes.length; j++) {
                 out += '<div id="quote_' + (j + 1) + '">' +
-                        '<blockquote>' +
+                        '<blockquote class="blockquote">' +
                         '<p>' +
+                        '<q>' +
                         inputArray[i].quotes[j].quote +
+                        '</q>' +
                         '</p>' +
-                        '<footer>' +
-                        '<address>' +
-                        inputArray[i].quotes[j].author + ',' +
-                        '</address>' +
+                        '<footer class="blockquote-footer text-right">' +
+                        inputArray[i].quotes[j].author + ', ' +
                         '<cite>' +
                         inputArray[i].quotes[j].source +
                         '</cite>' +
@@ -79,7 +83,7 @@ function stoicOutput(inputArray, d) {
             }
             out += '</div>'; // end div quotes
             out += '<div id="notes">';
-            out += inputArray[i].notes;
+            out += inputArray[i].notes; //main text of the json
             out += '</div>'; // end div notes
             
             // Add additional thoughts if they exist
@@ -94,9 +98,9 @@ function stoicOutput(inputArray, d) {
             
             // code to disable next and previous buttons
             //next.disabled = (i+1) >= inputArray.length;
-            next.hidden = (i + 1) >= inputArray.length;
+            //next.hidden = (i + 1) >= inputArray.length;
             //previous.disabled = i <= 0;
-            previous.hidden = i <= 0;
+            //previous.hidden = i <= 0;
 
         } //end if
     } //end for loop
@@ -106,19 +110,18 @@ function stoicOutput(inputArray, d) {
 //loop through stoicOutput and display results to page
 function reminderOutput(inputArray) {
     // LOOP FOR REMINDER OUTPUT
-    var out = "";
+    document.getElementById("reminders").style.visibility = "hidden";
+    var out = '<h3 class="text-danger">Reminders</h3>';
     for (var i = 0; i < inputArray.length; i++) {
         if (inputArray[i].date === dateToProcess) // only populate today's quote
-        {   getAge(dateToProcess + ' ' + inputArray[i].year);
-            out += '<div id = "reminder">';
-            out += '<h3>Reminders</h3>';
+        {   document.getElementById("reminders").style.visibility = "visible"
+            getAge(dateToProcess + ' ' + inputArray[i].year);
+            out += '<p>';
             out += inputArray[i].reminder;
             out += ' (' + inputArray[i].year + ') - ' + age;
-            out += '</div>'; // end div reminder
-            out += '<hr />'; // add hard return
+            out += '</p>'; // end div reminder
         } //end if
     } //END FOR LOOP
-
     document.getElementById("reminders").innerHTML = out;
     
 } // END stoicOutput(inputArray)
@@ -150,8 +153,6 @@ readFile(reminderFile, function(text){
     reminderArray = JSON.parse(text);
     console.log(reminderArray);
     reminderOutput(reminderArray);
-    
-
 });
 
     
