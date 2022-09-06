@@ -1921,7 +1921,9 @@
   {
     "date": "September 8",
     "topic": "",
-    "quotes": [{ "quote": "", "author": "", "source": "" }],
+    "quotes": [
+      { "quote": "", "author": "Seneca", "source": "On Consolation To Helvia, 5.4b, 5b-6" }
+    ],
     "notes": "<p></p>",
     "thoughts": ""
   },
