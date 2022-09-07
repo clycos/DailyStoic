@@ -1933,9 +1933,15 @@
   },
   {
     "date": "September 9",
-    "topic": "",
-    "quotes": [{ "quote": "", "author": "", "source": "" }],
-    "notes": "<p></p>",
+    "topic": "Nothing to Fear But Fear Itself",
+    "quotes": [
+      {
+        "quote": "But there is no reason to live and no limit to our miseries if we let our fears predominate.",
+        "author": "Seneca",
+        "source": "Moral Letters, 13.12b"
+      }
+    ],
+    "notes": "<p>In the early days of what would become known as the Great Depression, a new president named Franklin Delano Roosevelt was sworn in and gave his first inaugural address. As the last president to hold office before the Twentieth Amendment was ratified, FDR wasn't able to take office until March&mdash;meaning that the country had been without strong leadership for months. Panic was in the air, banks were failing, and people were scared.</p><p>You've probably heard the <q>nothing to fear but fear itself</q> sound bite that FDR gave in that famous speech, but the full line is worth reading because it applies to many difficult things we face in life:<blockquote><q>Let me assert my firm belief that the only thing we have to fear is fear itself&mdash;nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance.</q></blockquote></p><p>The Stoics knew that fear was to be feared because of the miseries it creates. The things we fear pale in comparison to the damage we do to ourselves and others when we unthinkingly scramble to avoid them. An economic depression is bad; a panic is worse. A tough situation isn't helped by terror&mdash;it only makes things harder. And that's why we must resist it and reject it if we wish to turn this situation around.</p>",
     "thoughts": ""
   },
   {
